@@ -52,7 +52,7 @@ $ rspm create token -q --sources="local-python-api" --description="Python source
 [TOKEN]
 ```
 
-As always, make the source available to users by subscribing it to a repo: 
+As always, make the source available to users by subscribing it to a repo:
 ```bash
 $ rspm create repo --name="local-python" --type=python --description="Internal Python Packages"
 $ rspm subscribe --source="local-python-api" --repo="local-python"
@@ -63,7 +63,7 @@ $ rspm subscribe --source="local-python-api" --repo="local-python"
 You can install Twine using `pip`:
 
 ```bash
-$ pip install --index-url https://packagemanager.posit.co/pypi/latest/simple twine 
+$ pip install --index-url https://packagemanager.posit.co/pypi/latest/simple twine
 ```
 
 ## Build the Python Distributions
@@ -72,17 +72,8 @@ Before uploading the Python package, we'll need to build it. This is done using 
 
 ```bash
 $ cd package-manager-demo/python-package-manager-demo
+$ python3 -m pip install -r requirements.txt
 $ python3 -m build
-* Creating virtualenv isolated environment...
-* Installing packages in isolated environment... (hatchling)
-* Getting dependencies for sdist...
-* Building sdist...
-* Building wheel from sdist
-* Creating virtualenv isolated environment...
-* Installing packages in isolated environment... (hatchling)
-* Getting dependencies for wheel...
-* Building wheel...
-Successfully built package_manager_demo-1.0.2.tar.gz and package_manager_demo-1.0.2-py3-none-any.whl
 ```
 
 ## Test the Python Distribution Locally
@@ -100,7 +91,7 @@ Then, start a new Python REPL:
 
 ```bash
 python
-``` 
+```
 
 In the Python REPL, verify that you can use the package.
 
